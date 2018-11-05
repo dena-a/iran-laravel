@@ -2,7 +2,7 @@
 
 namespace Dena\IranLaravel\Models\Traits;
 
-use Morilog\Jalali\jDate;
+use Morilog\Jalali\Jalalian;
 
 /**
  * Use in Eloquent Model
@@ -15,16 +15,16 @@ trait JalaliDates
      *
      * @return void
      */
-    public function getJalaliDatesAttribute()
+    public function getJalaliDatesAttribute() : object
     {
         $dates = [];
 
         if (isset($this->jalali_dates)) {
             foreach ($this->jalali_dates as $date) {
-                $dates[$date] = isset($this->$date) ? jDate::forge($this->$date)->format('datetime') : null;
+                $dates[$date] = isset($this->$date) ? Jalalian::fromCarbon($this->$date)->toString() : null;
             }
         }
 
-        return $dates;
+        return (object) $dates;
     }
 }

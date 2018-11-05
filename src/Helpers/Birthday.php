@@ -2,8 +2,8 @@
 
 namespace Dena\IranLaravel\Helpers;
 
-use jDateTime;
 use Carbon\Carbon;
+use Morilog\Jalali\CalendarUtils;
 
 class Birthday
 {
@@ -22,7 +22,7 @@ class Birthday
         $birthday[1]    = (strlen($birthday[1]) == 1) ? "0$birthday[1]" : $birthday[1] ;
         $birthday[2]    = (strlen($birthday[2]) == 1) ? "0$birthday[2]" : $birthday[2] ;
 
-        if (jDateTime::checkDate($birthday[0], $birthday[1], $birthday[2], false)) {
+        if (CalendarUtils::checkDate($birthday[0], $birthday[1], $birthday[2], false)) {
             return false;
         }
 
