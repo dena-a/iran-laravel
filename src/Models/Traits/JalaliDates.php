@@ -10,6 +10,18 @@ use Morilog\Jalali\Jalalian;
 trait JalaliDates
 {
     /**
+     * The attributes that should be converet to jalali dates.
+     *
+     * @var array
+     *
+     * protected $jalali_dates = [
+     *     'deleted_at',
+     *     'created_at',
+     *     'updated_at',
+     * ];
+     */
+
+    /**
      * Add 'jalali_dates' to eloquent $appends variable
      * @var array $jalali_dates add to model
      *
