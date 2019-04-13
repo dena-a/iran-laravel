@@ -20,7 +20,7 @@
 		"php": ">=5.5.0",
 		"illuminate/support": "5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.7.*",
 		"illuminate/database": "5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.7.*",
-		"morilog/jalali": "3.*",
+		"morilog/jalali": "dev-master",
         "nesbot/carbon": "^1.21"
 	},
 	"autoload": {
