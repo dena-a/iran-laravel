@@ -27,5 +27,12 @@
 		"psr-4": {
 			"Dena\\IranLaravel\\": "src"
 		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Dena\\IranLaravel\\IranLaravelServiceProvider"
+			]
+		}
 	}
 }

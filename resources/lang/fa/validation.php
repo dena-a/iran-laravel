@@ -170,5 +170,9 @@ return [
         'size'                  => 'اندازه',
         'terms'                 => 'شرایط',
         'province'              => 'استان',
+        /**
+         * IranLaravel attributes
+         */
+        'national_identity_code'=> 'کد ملی',
     ],
 ];
