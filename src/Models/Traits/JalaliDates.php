@@ -22,12 +22,12 @@ trait JalaliDates
      */
 
     /**
-     * Add 'jalali_dates' to eloquent $appends variable
+     * Add 'jalali' to eloquent $appends variable
      * @var array $jalali_dates add to model
      *
      * @return void
      */
-    public function getJalaliDatesAttribute() : object
+    public function getJalaliAttribute(): object
     {
         $dates = [];
 
