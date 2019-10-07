@@ -33,7 +33,7 @@ trait JalaliDates
 
         if (isset($this->jalali_dates)) {
             foreach ($this->jalali_dates as $date) {
-                $dates[$date] = isset($this->$date) ? Jalalian::fromCarbon($this->$date)->toString() : null;
+                $dates[$date] = isset($this->$date) ? Jalalian::fromCarbon($this->$date)->format('Y/m/d H:i:s') : null;
             }
         }
 
