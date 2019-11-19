@@ -32,8 +32,16 @@ trait JalaliDates
         $dates = [];
 
         if (isset($this->jalali_dates)) {
-            foreach ($this->jalali_dates as $date) {
-                $dates[$date] = isset($this->$date) ? Jalalian::fromCarbon($this->$date)->format('Y/m/d H:i:s') : null;
+            foreach ($this->jalali_dates as $key => $value) {
+                if (is_string($key)) {
+                    $attribute = $key;
+                    $format = $value;
+                } else {
+                    $attribute = $value;
+                    $format = 'Y/m/d H:i:s';
+                }
+
+                $dates[$attribute] = isset($this->$attribute) ? Jalalian::fromCarbon($this->$attribute)->format($format) : null;
             }
         }
 
