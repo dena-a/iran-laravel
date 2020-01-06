@@ -4,6 +4,8 @@ namespace Dena\IranLaravel\Models\Traits;
 
 use Morilog\Jalali\Jalalian;
 
+use Throwable;
+
 /**
  * Use in Eloquent Model
  */
@@ -40,8 +42,13 @@ trait JalaliDates
                     $attribute = $value;
                     $format = 'Y/m/d H:i:s';
                 }
-
-                $dates[$attribute] = isset($this->$attribute) ? Jalalian::fromCarbon($this->$attribute)->format($format) : null;
+                
+                try {
+                    $dates[$attribute] = isset($this->$attribute) ? Jalalian::fromCarbon($this->$attribute)->format($format) : null;
+                } catch(Throwable $th) {
+                    $dates[$attribute] = null;
+                }
+                
             }
         }
 
